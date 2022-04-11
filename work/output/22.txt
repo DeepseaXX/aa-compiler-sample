@@ -1,0 +1,124 @@
+ex22.p
+rm -f *.o *~ compiler
+gcc main.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc parse.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc main.o parse.o -o compiler -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+Outblock start.
+get VAR:x, no:0
+get VAR:y, no:1
+get VAR:z, no:2
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=     x  sline=4]
+	get IDENT:x
+x 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=   100  tok.charvalue=   100  sline=4]Expression-while-number
+		NumPush:100
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=4]Expression-before-end
+last:36  this:36
+		NumToR0:100
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=     y  sline=5]
+	get IDENT:y
+y 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=   200  tok.charvalue=   200  sline=5]Expression-while-number
+		NumPush:200
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=5]Expression-before-end
+last:36  this:36
+		NumToR0:200
+	Expression end
+------Statement------
+[tok.attr=3  tok.value=   265  tok.charvalue=    if  sline=6]
+	get "if"
+------Condition start------
+------Expression start------
+[tok.attr=1  tok.value=   265  tok.charvalue=     y  sline=6]Expression-while-ident
+	get IDENT:y
+		IdentPush:y
+[tok.attr=4  tok.value=    45  tok.charvalue=     -  sline=6]Expression-while-calsymbol
+last:36  this:45
+		SymPush:45
+[tok.attr=1  tok.value=    45  tok.charvalue=     x  sline=6]Expression-while-ident
+	get IDENT:x
+		IdentPush:x
+[tok.attr=4  tok.value=   259  tok.charvalue=    >=  sline=6]Expression-before-end
+last:45  this:36
+		SymbolPop:45
+		IdentPop:0...addr
+		IdentPop:1...addr
+		AddrPush:4
+last:36  this:36
+		AddrToR0:4
+	Expression end
+	get COMPSYMBOL: 259
+------Expression start------
+[tok.attr=2  tok.value=    50  tok.charvalue=    50  sline=6]Expression-while-number
+		NumPush:50
+[tok.attr=3  tok.value=   268  tok.charvalue=  then  sline=7]Expression-before-end
+last:36  this:36
+		NumToR0:50
+	Expression end
+	Label used:L0(Condition)
+	Label jumped:L1(Condition)
+	Condition end.
+	Label used:L0(ifthenelse)
+------Statement------
+[tok.attr=1  tok.value=   268  tok.charvalue=     z  sline=7]
+	get IDENT:z
+z 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     2  tok.charvalue=     2  sline=7]Expression-while-number
+		NumPush:2
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=7]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=     x  sline=7]Expression-while-ident
+	get IDENT:x
+		IdentPush:x
+[tok.attr=3  tok.value=   263  tok.charvalue=  else  sline=8]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		IdentPop:0...addr
+		NumPop:2
+		AddrPush:4
+last:36  this:36
+		AddrToR0:4
+	Expression end
+	Label jumped:L2(ifthenelse)
+else get
+	Label used:L1(ifthenelse)
+------Statement------
+[tok.attr=1  tok.value=   263  tok.charvalue=     z  sline=8]
+	get IDENT:z
+z 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     3  tok.charvalue=     3  sline=8]Expression-while-number
+		NumPush:3
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=8]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=     x  sline=8]Expression-while-ident
+	get IDENT:x
+		IdentPush:x
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=8]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		IdentPop:0...addr
+		NumPop:3
+		AddrPush:4
+last:36  this:36
+		AddrToR0:4
+	Expression end
+	Label used:L2(ifthenelse)
+------Statement------
+[tok.attr=3  tok.value=   272  tok.charvalue= write  sline=9]
+	get "write" 
+	get IDENT:x
+	get IDENT:y
+	get IDENT:z

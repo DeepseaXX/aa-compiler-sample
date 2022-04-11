@@ -1,0 +1,564 @@
+pi.p
+rm -f *.o *~ compiler
+gcc main.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc parse.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc main.o parse.o -o compiler -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+Outblock start.
+get VAR:i, no:0
+get VAR:rand, no:1
+get VAR:ca, no:2
+get VAR:cm, no:3
+get VAR:pi, no:4
+get VAR:qpi, no:5
+get VAR:x, no:6
+get VAR:y, no:7
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=     i  sline=4]
+	get IDENT:i
+i 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     0  tok.charvalue=     0  sline=4]Expression-while-number
+		NumPush:0
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=4]Expression-before-end
+last:36  this:36
+		NumToR0:0
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=   qpi  sline=5]
+	get IDENT:qpi
+qpi 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     0  tok.charvalue=     0  sline=5]Expression-while-number
+		NumPush:0
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=5]Expression-before-end
+last:36  this:36
+		NumToR0:0
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=  rand  sline=6]
+	get IDENT:rand
+rand 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=  3827  tok.charvalue=  3827  sline=6]Expression-while-number
+		NumPush:3827
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=6]Expression-before-end
+last:36  this:36
+		NumToR0:3827
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=    ca  sline=7]
+	get IDENT:ca
+ca 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=  8358  tok.charvalue=  8358  sline=7]Expression-while-number
+		NumPush:8358
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=7]Expression-before-end
+last:36  this:36
+		NumToR0:8358
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=    cm  sline=8]
+	get IDENT:cm
+cm 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=  3797  tok.charvalue=  3797  sline=8]Expression-while-number
+		NumPush:3797
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=8]Expression-before-end
+last:36  this:36
+		NumToR0:3797
+	Expression end
+------Statement------
+[tok.attr=3  tok.value=   270  tok.charvalue= while  sline=9]
+	get "while"
+	Label used:L0(whiledo)
+------Condition start------
+------Expression start------
+[tok.attr=1  tok.value=   270  tok.charvalue=     i  sline=9]Expression-while-ident
+	get IDENT:i
+		IdentPush:i
+[tok.attr=4  tok.value=    60  tok.charvalue=     <  sline=9]Expression-before-end
+last:36  this:36
+		IdentToR0:0...addr
+	Expression end
+	get COMPSYMBOL: 60
+------Expression start------
+[tok.attr=2  tok.value=  1000  tok.charvalue=  1000  sline=9]Expression-while-number
+		NumPush:1000
+[tok.attr=3  tok.value=   262  tok.charvalue=    do  sline=9]Expression-before-end
+last:36  this:36
+		NumToR0:1000
+	Expression end
+	Label used:L1(Condition)
+	Label jumped:L2(Condition)
+	Condition end.
+	get "do"
+	Label used:L1(whiledo)
+------Statement------
+[tok.attr=3  tok.value=   260  tok.charvalue= begin  sline=9]
+	get "begin" 
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=  rand  sline=10]
+	get IDENT:rand
+rand 
+	get ":="
+------Expression start------
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=10]Expression-while-calsymbol
+last:36  this:40
+		SymPush:40
+[tok.attr=1  tok.value=    40  tok.charvalue=  rand  sline=10]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=10]Expression-while-calsymbol
+last:40  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=    ca  sline=10]Expression-while-ident
+	get IDENT:ca
+		IdentPush:ca
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=10]Expression-while-calsymbol
+last:43  this:41
+		SymbolPop:43
+		IdentPop:2...addr
+		IdentPop:1...addr
+		AddrPush:9
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=10]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=    cm  sline=10]Expression-while-ident
+	get IDENT:cm
+		IdentPush:cm
+[tok.attr=4  tok.value=    45  tok.charvalue=     -  sline=10]Expression-while-calsymbol
+last:42  this:45
+		SymbolPop:42
+		IdentPop:3...addr
+		AddrPop:9
+		AddrPush:10
+last:36  this:45
+		SymPush:45
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=10]Expression-while-calsymbol
+last:45  this:40
+		SymPush:40
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=10]Expression-while-calsymbol
+last:40  this:40
+		SymPush:40
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=10]Expression-while-calsymbol
+last:40  this:40
+		SymPush:40
+[tok.attr=1  tok.value=    40  tok.charvalue=  rand  sline=10]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=10]Expression-while-calsymbol
+last:40  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=    ca  sline=10]Expression-while-ident
+	get IDENT:ca
+		IdentPush:ca
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=10]Expression-while-calsymbol
+last:43  this:41
+		SymbolPop:43
+		IdentPop:2...addr
+		IdentPop:1...addr
+		AddrPush:11
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=10]Expression-while-calsymbol
+last:40  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=    cm  sline=10]Expression-while-ident
+	get IDENT:cm
+		IdentPush:cm
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=10]Expression-while-calsymbol
+last:42  this:41
+		SymbolPop:42
+		IdentPop:3...addr
+		AddrPop:11
+		AddrPush:12
+last:40  this:41
+		SymbolPop:40
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=10]Expression-while-calsymbol
+last:40  this:47
+		SymPush:47
+[tok.attr=2  tok.value=100000  tok.charvalue=100000  sline=10]Expression-while-number
+		NumPush:100000
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=10]Expression-while-calsymbol
+last:47  this:41
+		SymbolPop:47
+		NumPop:100000
+		AddrPop:12
+		AddrPush:13
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=10]Expression-while-calsymbol
+last:45  this:42
+		SymPush:42
+[tok.attr=2  tok.value=100000  tok.charvalue=100000  sline=10]Expression-while-number
+		NumPush:100000
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=10]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		NumPop:100000
+		AddrPop:13
+		AddrPush:14
+last:45  this:36
+		SymbolPop:45
+		AddrPop:14
+		AddrPop:10
+		AddrPush:15
+last:36  this:36
+		AddrToR0:15
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=10]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=  rand  sline=11]
+	get IDENT:rand
+rand 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=  rand  sline=11]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=11]Expression-while-calsymbol
+last:36  this:47
+		SymPush:47
+[tok.attr=2  tok.value=    10  tok.charvalue=    10  sline=11]Expression-while-number
+		NumPush:10
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=11]Expression-before-end
+last:47  this:36
+		SymbolPop:47
+		NumPop:10
+		IdentPop:1...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=11]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=     x  sline=12]
+	get IDENT:x
+x 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=  rand  sline=12]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=12]Expression-while-calsymbol
+last:36  this:47
+		SymPush:47
+[tok.attr=2  tok.value=    10  tok.charvalue=    10  sline=12]Expression-while-number
+		NumPush:10
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=12]Expression-before-end
+last:47  this:36
+		SymbolPop:47
+		NumPop:10
+		IdentPop:1...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=12]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=  rand  sline=13]
+	get IDENT:rand
+rand 
+	get ":="
+------Expression start------
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=13]Expression-while-calsymbol
+last:36  this:40
+		SymPush:40
+[tok.attr=1  tok.value=    40  tok.charvalue=  rand  sline=13]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=13]Expression-while-calsymbol
+last:40  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=    ca  sline=13]Expression-while-ident
+	get IDENT:ca
+		IdentPush:ca
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=13]Expression-while-calsymbol
+last:43  this:41
+		SymbolPop:43
+		IdentPop:2...addr
+		IdentPop:1...addr
+		AddrPush:9
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=13]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=    cm  sline=13]Expression-while-ident
+	get IDENT:cm
+		IdentPush:cm
+[tok.attr=4  tok.value=    45  tok.charvalue=     -  sline=13]Expression-while-calsymbol
+last:42  this:45
+		SymbolPop:42
+		IdentPop:3...addr
+		AddrPop:9
+		AddrPush:10
+last:36  this:45
+		SymPush:45
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=13]Expression-while-calsymbol
+last:45  this:40
+		SymPush:40
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=13]Expression-while-calsymbol
+last:40  this:40
+		SymPush:40
+[tok.attr=4  tok.value=    40  tok.charvalue=     (  sline=13]Expression-while-calsymbol
+last:40  this:40
+		SymPush:40
+[tok.attr=1  tok.value=    40  tok.charvalue=  rand  sline=13]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=13]Expression-while-calsymbol
+last:40  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=    ca  sline=13]Expression-while-ident
+	get IDENT:ca
+		IdentPush:ca
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=13]Expression-while-calsymbol
+last:43  this:41
+		SymbolPop:43
+		IdentPop:2...addr
+		IdentPop:1...addr
+		AddrPush:11
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=13]Expression-while-calsymbol
+last:40  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=    cm  sline=13]Expression-while-ident
+	get IDENT:cm
+		IdentPush:cm
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=13]Expression-while-calsymbol
+last:42  this:41
+		SymbolPop:42
+		IdentPop:3...addr
+		AddrPop:11
+		AddrPush:12
+last:40  this:41
+		SymbolPop:40
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=13]Expression-while-calsymbol
+last:40  this:47
+		SymPush:47
+[tok.attr=2  tok.value=100000  tok.charvalue=100000  sline=13]Expression-while-number
+		NumPush:100000
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=13]Expression-while-calsymbol
+last:47  this:41
+		SymbolPop:47
+		NumPop:100000
+		AddrPop:12
+		AddrPush:13
+last:40  this:41
+		SymbolPop:40
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=13]Expression-while-calsymbol
+last:45  this:42
+		SymPush:42
+[tok.attr=2  tok.value=100000  tok.charvalue=100000  sline=13]Expression-while-number
+		NumPush:100000
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=13]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		NumPop:100000
+		AddrPop:13
+		AddrPush:14
+last:45  this:36
+		SymbolPop:45
+		AddrPop:14
+		AddrPop:10
+		AddrPush:15
+last:36  this:36
+		AddrToR0:15
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=13]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=  rand  sline=14]
+	get IDENT:rand
+rand 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=  rand  sline=14]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=14]Expression-while-calsymbol
+last:36  this:47
+		SymPush:47
+[tok.attr=2  tok.value=    10  tok.charvalue=    10  sline=14]Expression-while-number
+		NumPush:10
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=14]Expression-before-end
+last:47  this:36
+		SymbolPop:47
+		NumPop:10
+		IdentPop:1...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=14]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=     y  sline=15]
+	get IDENT:y
+y 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=  rand  sline=15]Expression-while-ident
+	get IDENT:rand
+		IdentPush:rand
+[tok.attr=3  tok.value=   261  tok.charvalue=   div  sline=15]Expression-while-calsymbol
+last:36  this:47
+		SymPush:47
+[tok.attr=2  tok.value=    10  tok.charvalue=    10  sline=15]Expression-while-number
+		NumPush:10
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=15]Expression-before-end
+last:47  this:36
+		SymbolPop:47
+		NumPop:10
+		IdentPop:1...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=15]Statement begin where";"
+------Statement------
+[tok.attr=3  tok.value=   265  tok.charvalue=    if  sline=16]
+	get "if"
+------Condition start------
+------Expression start------
+[tok.attr=1  tok.value=   265  tok.charvalue=     x  sline=16]Expression-while-ident
+	get IDENT:x
+		IdentPush:x
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=16]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=     x  sline=16]Expression-while-ident
+	get IDENT:x
+		IdentPush:x
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=16]Expression-while-calsymbol
+last:42  this:43
+		SymbolPop:42
+		IdentPop:6...addr
+		IdentPop:6...addr
+		AddrPush:9
+last:36  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=     y  sline=16]Expression-while-ident
+	get IDENT:y
+		IdentPush:y
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=16]Expression-while-calsymbol
+last:43  this:42
+		SymPush:42
+[tok.attr=1  tok.value=    42  tok.charvalue=     y  sline=16]Expression-while-ident
+	get IDENT:y
+		IdentPush:y
+[tok.attr=4  tok.value=    60  tok.charvalue=     <  sline=16]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		IdentPop:7...addr
+		IdentPop:7...addr
+		AddrPush:10
+last:43  this:36
+		SymbolPop:43
+		AddrPop:10
+		AddrPop:9
+		AddrPush:11
+last:36  this:36
+		AddrToR0:11
+	Expression end
+	get COMPSYMBOL: 60
+------Expression start------
+[tok.attr=2  tok.value=1000000  tok.charvalue=1000000  sline=16]Expression-while-number
+		NumPush:1000000
+[tok.attr=3  tok.value=   268  tok.charvalue=  then  sline=16]Expression-before-end
+last:36  this:36
+		NumToR0:1000000
+	Expression end
+	Label used:L3(Condition)
+	Label jumped:L4(Condition)
+	Condition end.
+	Label used:L3(ifthenelse)
+------Statement------
+[tok.attr=1  tok.value=   268  tok.charvalue=   qpi  sline=17]
+	get IDENT:qpi
+qpi 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=   qpi  sline=17]Expression-while-ident
+	get IDENT:qpi
+		IdentPush:qpi
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=17]Expression-while-calsymbol
+last:36  this:43
+		SymPush:43
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=17]Expression-while-number
+		NumPush:1
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=17]Expression-before-end
+last:43  this:36
+		SymbolPop:43
+		NumPop:1
+		IdentPop:5...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+	Label used:L4(ifthenelse)
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=17]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=     i  sline=18]
+	get IDENT:i
+i 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=     i  sline=18]Expression-while-ident
+	get IDENT:i
+		IdentPush:i
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=18]Expression-while-calsymbol
+last:36  this:43
+		SymPush:43
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=18]Expression-while-number
+		NumPush:1
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=19]Expression-before-end
+last:43  this:36
+		SymbolPop:43
+		NumPop:1
+		IdentPop:0...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=19]Statement begin where";"
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=19]Statement begin ";"break
+	get "end"
+	BGEIN+END block end
+	Label jumped:L0(whiledo)
+	Label used:L2(whiledo)
+	"while" end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=    pi  sline=20]
+	get IDENT:pi
+pi 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=   qpi  sline=20]Expression-while-ident
+	get IDENT:qpi
+		IdentPush:qpi
+[tok.attr=4  tok.value=    42  tok.charvalue=     *  sline=20]Expression-while-calsymbol
+last:36  this:42
+		SymPush:42
+[tok.attr=2  tok.value=     4  tok.charvalue=     4  sline=20]Expression-while-number
+		NumPush:4
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=20]Expression-before-end
+last:42  this:36
+		SymbolPop:42
+		NumPop:4
+		IdentPop:5...addr
+		AddrPush:9
+last:36  this:36
+		AddrToR0:9
+	Expression end
+------Statement------
+[tok.attr=3  tok.value=   272  tok.charvalue= write  sline=21]
+	get "write" 
+	get IDENT:pi

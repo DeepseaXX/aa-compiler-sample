@@ -1,0 +1,5 @@
+loading 'a.out'
+3124 
+
+HALT at 146.
+;;; exec time = 590289 micro sec.

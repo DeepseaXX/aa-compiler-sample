@@ -1,0 +1,229 @@
+hanoi.p
+rm -f *.o *~ compiler
+gcc main.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc parse.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc main.o parse.o -o compiler -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+Outblock start.
+get VAR:n, no:0
+get PROCEDURE:hanoi, no:0
+[tok.attr=1  tok.value=    40  tok.charvalue=     a  sline=4]Inblock ident
+get PROC PARAM:a, no:0
+[tok.attr=1  tok.value=    44  tok.charvalue=     b  sline=4]Inblock ident
+get PROC PARAM:b, no:1
+[tok.attr=1  tok.value=    44  tok.charvalue=     c  sline=4]Inblock ident
+get PROC PARAM:c, no:2
+[tok.attr=1  tok.value=    44  tok.charvalue=     n  sline=4]Inblock ident
+get PROC PARAM:n, no:3
+Totaly got ident:4
+[tok.attr=3  tok.value=   269  tok.charvalue=   var  sline=5]inblock var
+[tok.attr=1  tok.value=   269  tok.charvalue=     i  sline=5]inblock var
+get PROC PARAM:i, no:0
+Totaly got ident:1
+------ProcStatement------
+[tok.attr=3  tok.value=   265  tok.charvalue=    if  sline=6]
+	get "if"
+------ProcCondition start------
+------ProcExpression start------
+[tok.attr=1  tok.value=   265  tok.charvalue=     n  sline=6]ProcExpression-while-ident
+	get IDENT as PARAM:n
+	get IDENT:n
+		IdentPush:n
+[tok.attr=4  tok.value=    61  tok.charvalue=     =  sline=6]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-2...addr
+	ProcExpression end
+	get COMPSYMBOL: 61
+------ProcExpression start------
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=6]ProcExpression-while-number
+		NumPush:1
+[tok.attr=3  tok.value=   268  tok.charvalue=  then  sline=6]ProcExpression-before-end
+last:36  this:36
+		NumToR0:1
+	ProcExpression end
+	Label used:L0(ProcCondition)
+	Label jumped:L1(ProcCondition)
+	ProcCondition end.
+	Label used:L0(ifthenelse)
+------ProcStatement------
+[tok.attr=3  tok.value=   272  tok.charvalue= write  sline=6]
+	get "write" 
+	get IDENT as PARAM:a
+	get IDENT as PARAM:b
+	Label jumped:L2(ifthenelse)
+else get
+	Label used:L1(ifthenelse)
+------ProcStatement------
+[tok.attr=3  tok.value=   260  tok.charvalue= begin  sline=8]
+	get "begin" 
+------ProcStatement------
+[tok.attr=1  tok.value=   260  tok.charvalue= hanoi  sline=9]
+	get PROCEDURE:hanoi
+hanoi 
+hanoi 
+------Paramlist Start------
+------ProcExpression start------
+[tok.attr=1  tok.value=    40  tok.charvalue=     a  sline=9]ProcExpression-while-ident
+	get IDENT as PARAM:a
+a 
+		IdentPush:a
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=9]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-5...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     c  sline=9]ProcExpression-while-ident
+	get IDENT as PARAM:c
+c 
+		IdentPush:c
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=9]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-3...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     b  sline=9]ProcExpression-while-ident
+	get IDENT as PARAM:b
+b 
+		IdentPush:b
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=9]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-4...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     n  sline=9]ProcExpression-while-ident
+	get IDENT as PARAM:n
+	get IDENT:n
+		IdentPush:n
+[tok.attr=4  tok.value=    45  tok.charvalue=     -  sline=9]ProcExpression-while-calsymbol
+last:36  this:45
+		SymPush:45
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=9]ProcExpression-while-number
+		NumPush:1
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=9]ProcExpression-while-calsymbol
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=9]ProcExpression-before-end
+last:45  this:36
+		SymbolPop:45
+		NumPop:1
+		PIdentToR0:-2...addr
+		AddrPush:2
+last:36  this:36
+		AddrToR0:2
+	ProcExpression end
+	Paramlist End
+------ProcStatement------
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=9]
+------ProcStatement------
+[tok.attr=3  tok.value=   272  tok.charvalue= write  sline=10]
+	get "write" 
+	get IDENT as PARAM:a
+	get IDENT as PARAM:b
+------ProcStatement------
+[tok.attr=1  tok.value=    59  tok.charvalue= hanoi  sline=11]
+	get PROCEDURE:hanoi
+hanoi 
+hanoi 
+------Paramlist Start------
+------ProcExpression start------
+[tok.attr=1  tok.value=    40  tok.charvalue=     c  sline=11]ProcExpression-while-ident
+	get IDENT as PARAM:c
+c 
+		IdentPush:c
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=11]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-3...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     b  sline=11]ProcExpression-while-ident
+	get IDENT as PARAM:b
+b 
+		IdentPush:b
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=11]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-4...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     a  sline=11]ProcExpression-while-ident
+	get IDENT as PARAM:a
+a 
+		IdentPush:a
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=11]ProcExpression-before-end
+last:36  this:36
+		PIdentToR0:-5...addr
+	ProcExpression end
+------ProcExpression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     n  sline=11]ProcExpression-while-ident
+	get IDENT as PARAM:n
+	get IDENT:n
+		IdentPush:n
+[tok.attr=4  tok.value=    45  tok.charvalue=     -  sline=11]ProcExpression-while-calsymbol
+last:36  this:45
+		SymPush:45
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=11]ProcExpression-while-number
+		NumPush:1
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=11]ProcExpression-while-calsymbol
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=11]ProcExpression-before-end
+last:45  this:36
+		SymbolPop:45
+		NumPop:1
+		PIdentToR0:-2...addr
+		AddrPush:2
+last:36  this:36
+		AddrToR0:2
+	ProcExpression end
+	Paramlist End
+------ProcStatement------
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=12]
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=12]ProcStatement before "end"
+	get "end"
+	BGEIN+END block end
+	Label used:L2(ifthenelse)
+	 "if" end
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=     n  sline=15]
+	get IDENT:n
+n 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     5  tok.charvalue=     5  sline=15]Expression-while-number
+		NumPush:5
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=15]Expression-before-end
+last:36  this:36
+		NumToR0:5
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue= hanoi  sline=16]
+hanoi 
+	get PROCEDURE:hanoi
+------Paramlist Start------
+------Expression start------
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=16]Expression-while-number
+		NumPush:1
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=16]Expression-before-end
+last:36  this:36
+		NumToR0:1
+	Expression end
+------Expression start------
+[tok.attr=2  tok.value=     2  tok.charvalue=     2  sline=16]Expression-while-number
+		NumPush:2
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=16]Expression-before-end
+last:36  this:36
+		NumToR0:2
+	Expression end
+------Expression start------
+[tok.attr=2  tok.value=     3  tok.charvalue=     3  sline=16]Expression-while-number
+		NumPush:3
+[tok.attr=4  tok.value=    44  tok.charvalue=     ,  sline=16]Expression-before-end
+last:36  this:36
+		NumToR0:3
+	Expression end
+------Expression start------
+[tok.attr=1  tok.value=    44  tok.charvalue=     n  sline=16]Expression-while-ident
+	get IDENT:n
+		IdentPush:n
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=16]Expression-while-calsymbol
+[tok.attr=4  tok.value=    41  tok.charvalue=     )  sline=16]Expression-before-end
+last:36  this:36
+		IdentToR0:0...addr
+	Expression end
+	Paramlist End
+------Statement------
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=17]

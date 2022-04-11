@@ -1,0 +1,120 @@
+ex23.p
+rm -f *.o *~ compiler
+gcc main.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc parse.c -c -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+gcc main.o parse.o -o compiler -O2 -Wall -I. -I/home/29114/clf14151/p1/include -L/home/29114/clf14151/p1/lib -lics
+Outblock start.
+get VAR:i, no:0
+get VAR:sum, no:1
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=     i  sline=4]
+	get IDENT:i
+i 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     0  tok.charvalue=     0  sline=4]Expression-while-number
+		NumPush:0
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=4]Expression-before-end
+last:36  this:36
+		NumToR0:0
+	Expression end
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=   sum  sline=5]
+	get IDENT:sum
+sum 
+	get ":="
+------Expression start------
+[tok.attr=2  tok.value=     0  tok.charvalue=     0  sline=5]Expression-while-number
+		NumPush:0
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=5]Expression-before-end
+last:36  this:36
+		NumToR0:0
+	Expression end
+------Statement------
+[tok.attr=3  tok.value=   270  tok.charvalue= while  sline=6]
+	get "while"
+	Label used:L0(whiledo)
+------Condition start------
+------Expression start------
+[tok.attr=1  tok.value=   270  tok.charvalue=     i  sline=6]Expression-while-ident
+	get IDENT:i
+		IdentPush:i
+[tok.attr=4  tok.value=   257  tok.charvalue=    <=  sline=6]Expression-before-end
+last:36  this:36
+		IdentToR0:0...addr
+	Expression end
+	get COMPSYMBOL: 257
+------Expression start------
+[tok.attr=2  tok.value=    10  tok.charvalue=    10  sline=6]Expression-while-number
+		NumPush:10
+[tok.attr=3  tok.value=   262  tok.charvalue=    do  sline=6]Expression-before-end
+last:36  this:36
+		NumToR0:10
+	Expression end
+	Label used:L1(Condition)
+	Label jumped:L2(Condition)
+	Condition end.
+	get "do"
+	Label used:L1(whiledo)
+------Statement------
+[tok.attr=3  tok.value=   260  tok.charvalue= begin  sline=7]
+	get "begin" 
+------Statement------
+[tok.attr=1  tok.value=   260  tok.charvalue=   sum  sline=8]
+	get IDENT:sum
+sum 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=   sum  sline=8]Expression-while-ident
+	get IDENT:sum
+		IdentPush:sum
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=8]Expression-while-calsymbol
+last:36  this:43
+		SymPush:43
+[tok.attr=1  tok.value=    43  tok.charvalue=     i  sline=8]Expression-while-ident
+	get IDENT:i
+		IdentPush:i
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=8]Expression-before-end
+last:43  this:36
+		SymbolPop:43
+		IdentPop:0...addr
+		IdentPop:1...addr
+		AddrPush:3
+last:36  this:36
+		AddrToR0:3
+	Expression end
+[tok.attr=4  tok.value=    59  tok.charvalue=     ;  sline=8]Statement begin where";"
+------Statement------
+[tok.attr=1  tok.value=    59  tok.charvalue=     i  sline=9]
+	get IDENT:i
+i 
+	get ":="
+------Expression start------
+[tok.attr=1  tok.value=   256  tok.charvalue=     i  sline=9]Expression-while-ident
+	get IDENT:i
+		IdentPush:i
+[tok.attr=4  tok.value=    43  tok.charvalue=     +  sline=9]Expression-while-calsymbol
+last:36  this:43
+		SymPush:43
+[tok.attr=2  tok.value=     1  tok.charvalue=     1  sline=9]Expression-while-number
+		NumPush:1
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=10]Expression-before-end
+last:43  this:36
+		SymbolPop:43
+		NumPop:1
+		IdentPop:0...addr
+		AddrPush:3
+last:36  this:36
+		AddrToR0:3
+	Expression end
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=10]Statement begin where";"
+[tok.attr=3  tok.value=   264  tok.charvalue=   end  sline=10]Statement begin ";"break
+	get "end"
+	BGEIN+END block end
+	Label jumped:L0(whiledo)
+	Label used:L2(whiledo)
+	"while" end
+------Statement------
+[tok.attr=3  tok.value=   272  tok.charvalue= write  sline=11]
+	get "write" 
+	get IDENT:sum
